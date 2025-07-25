@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build project", // A descriptive name for your build task
+            "type": "shell",
+            "command": "g++", // The compiler command
+            "args": [
+                "-g", // Generates debug information
+                "src/main.cpp",     // Include your main source file
+                "src/Playlist.cpp", // Include your Playlist implementation
+                "src/RecentPlays.cpp", // Include your RecentPlays implementation
+                "-o", // Output flag
+                "build/music_player" // The name and path of your executable
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true // Makes this the default build task
+            },
+            "presentation": {
+                "reveal": "always", // Always show the terminal output during build
+                "panel": "new"      // Open a new terminal panel for the build output
+            },
+            "problemMatcher": "$gcc", // Use GCC's problem matcher for error highlighting
+            "options": {
+                "cwd": "${workspaceFolder}" // Run the command from the project root
+            }
+        }
+    ]
+}
